@@ -82,6 +82,19 @@ table classStudents {
   studentId int
 }
 
+table attendenceRecord {
+  id int
+  date datetime
+  classId int
+}
+
+table attendenceRecordStudents {
+  id int
+  attendenceRecordId int
+  studentId int
+  present bool
+}
+
 Ref: "rides"."locationId" < "location"."id"
 
 Ref: "rides"."id" < "studentRide"."rideId"
@@ -103,3 +116,7 @@ Ref: "classStudents"."classId" < "class"."id"
 Ref: "classStudents"."studentId" < "students"."id"
 
 Ref: "class"."locationId" < "location"."id"
+
+Ref: "attendenceRecord"."classId" < "classStudents"."classId"
+
+Ref: "attendenceRecordStudents"."attendenceRecordId" < "attendenceRecord"."id"
