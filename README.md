@@ -7,7 +7,7 @@ It will use React for FrontEnd. (possible refactor of fronEnd to hook up to Back
 
 This will also include features for attendance record keeping.
 
-
+## ERD 
 table users {
   id int
   administrator false
